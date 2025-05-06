@@ -22,7 +22,7 @@ This connector allows you to extract data from Agora's real-time communication p
 | Stream Name | Description | Incremental Sync |
 |-------------|-------------|------------------|
 | usage | API and bandwidth consumption metrics | ✅ |
-| call_quality | Call quality metrics (latency, loss, jitter) | ✅ |
+| call_quality | Call quality metrics (latency, loss, jitter, quality scores) | ✅ |
 | recordings | Recording session information | ✅ |
 | channels | Channel creation and usage statistics | ✅ |
 | events | System events and errors | ✅ |

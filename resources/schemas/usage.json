@@ -1,0 +1,80 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "usage_id": {
+      "type": "string",
+      "description": "Unique identifier for the usage record"
+    },
+    "timestamp": {
+      "type": "integer",
+      "description": "Timestamp of when the usage record was created (in milliseconds since epoch)"
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "The date the usage metrics were collected for"
+    },
+    "app_id": {
+      "type": "string",
+      "description": "Agora App ID associated with this usage"
+    },
+    "project_name": {
+      "type": "string",
+      "description": "Name of the project associated with this usage"
+    },
+    "resource_type": {
+      "type": "string",
+      "description": "Type of resource being measured"
+    },
+    "unit": {
+      "type": "string",
+      "description": "Unit of measurement (e.g., minutes, GB, count)"
+    },
+    "quantity": {
+      "type": "number",
+      "description": "Amount of resource used"
+    },
+    "audio_minutes": {
+      "type": "number",
+      "description": "Total audio minutes used"
+    },
+    "video_sd_minutes": {
+      "type": "number",
+      "description": "SD video minutes used"
+    },
+    "video_hd_minutes": {
+      "type": "number",
+      "description": "HD video minutes used"
+    },
+    "video_hd_plus_minutes": {
+      "type": "number",
+      "description": "HD+ video minutes used"
+    },
+    "recording_minutes": {
+      "type": "number",
+      "description": "Total recording minutes"
+    },
+    "bandwidth_usage": {
+      "type": "number",
+      "description": "Bandwidth usage in GB"
+    },
+    "cloud_recording_storage": {
+      "type": "number",
+      "description": "Cloud recording storage in GB"
+    },
+    "channel_count": {
+      "type": "integer",
+      "description": "Number of channels used"
+    },
+    "peak_concurrent_users": {
+      "type": "integer",
+      "description": "Peak number of concurrent users"
+    },
+    "region": {
+      "type": "string",
+      "description": "Geographic region for this usage data"
+    }
+  },
+  "required": ["usage_id", "timestamp", "date", "app_id", "resource_type"]
+}

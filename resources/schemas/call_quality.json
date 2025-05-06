@@ -1,0 +1,135 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "quality_id": {
+      "type": "string",
+      "description": "Unique identifier for the call quality record"
+    },
+    "timestamp": {
+      "type": "integer", 
+      "description": "Timestamp of when the quality record was created (in milliseconds since epoch)"
+    },
+    "channel_id": {
+      "type": "string",
+      "description": "Channel ID where the call took place"
+    },
+    "call_id": {
+      "type": "string",
+      "description": "Unique ID of the call"
+    },
+    "user_id": {
+      "type": "string",
+      "description": "User ID for which the quality metrics are measured"
+    },
+    "app_id": {
+      "type": "string",
+      "description": "Agora App ID associated with this call"
+    },
+    "start_time": {
+      "type": "integer",
+      "description": "Call start time (in milliseconds since epoch)"
+    },
+    "end_time": {
+      "type": "integer",
+      "description": "Call end time (in milliseconds since epoch)"
+    },
+    "duration": {
+      "type": "integer",
+      "description": "Call duration in seconds"
+    },
+    "network_type": {
+      "type": "string",
+      "description": "Network type (e.g., WiFi, 4G, etc.)"
+    },
+    "device_type": {
+      "type": "string",
+      "description": "Type of device used (e.g., Android, iOS, Desktop)"
+    },
+    "sdk_version": {
+      "type": "string",
+      "description": "Agora SDK version used"
+    },
+    "os_version": {
+      "type": "string",
+      "description": "Operating system version"
+    },
+    "region": {
+      "type": "string",
+      "description": "Geographic region of the user"
+    },
+    "audio_quality_score": {
+      "type": "number",
+      "description": "Quality score for audio (0-5 scale, where 5 is best)"
+    },
+    "video_quality_score": {
+      "type": "number",
+      "description": "Quality score for video (0-5 scale, where 5 is best)"
+    },
+    "overall_quality_score": {
+      "type": "number",
+      "description": "Overall call quality score (0-5 scale, where 5 is best)"
+    },
+    "latency": {
+      "type": "number",
+      "description": "Latency in milliseconds"
+    },
+    "packet_loss_rate": {
+      "type": "number",
+      "description": "Packet loss rate in percentage"
+    },
+    "jitter": {
+      "type": "number",
+      "description": "Jitter in milliseconds"
+    },
+    "audio_bitrate": {
+      "type": "number",
+      "description": "Audio bitrate in Kbps"
+    },
+    "video_bitrate": {
+      "type": "number",
+      "description": "Video bitrate in Kbps"
+    },
+    "audio_packet_loss_rate": {
+      "type": "number",
+      "description": "Audio packet loss rate in percentage"
+    },
+    "video_packet_loss_rate": {
+      "type": "number",
+      "description": "Video packet loss rate in percentage"
+    },
+    "audio_freeze_count": {
+      "type": "integer",
+      "description": "Number of audio freezes during the call"
+    },
+    "video_freeze_count": {
+      "type": "integer",
+      "description": "Number of video freezes during the call"
+    },
+    "cpu_usage": {
+      "type": "number",
+      "description": "CPU usage during the call in percentage"
+    },
+    "memory_usage": {
+      "type": "number",
+      "description": "Memory usage during the call in percentage"
+    },
+    "video_resolution": {
+      "type": "string",
+      "description": "Video resolution (e.g., 640x480, 1280x720)"
+    },
+    "frame_rate": {
+      "type": "number",
+      "description": "Video frame rate"
+    },
+    "issue_description": {
+      "type": "string",
+      "description": "Description of any quality issues that occurred"
+    },
+    "has_issues": {
+      "type": "boolean",
+      "description": "Indicates if the call had quality issues"
+    }
+  },
+  "required": ["quality_id", "timestamp", "channel_id", "call_id", "user_id", "app_id", "start_time"]
+}

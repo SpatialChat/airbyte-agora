@@ -1,0 +1,108 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "recording_id": {
+      "type": "string",
+      "description": "Unique identifier for the recording"
+    },
+    "timestamp": {
+      "type": "integer", 
+      "description": "Timestamp of when the recording was created (in milliseconds since epoch)"
+    },
+    "app_id": {
+      "type": "string",
+      "description": "Agora App ID associated with this recording"
+    },
+    "channel_id": {
+      "type": "string",
+      "description": "Channel ID where the recording took place"
+    },
+    "uid": {
+      "type": "string",
+      "description": "User ID of the recording initiator"
+    },
+    "start_time": {
+      "type": "integer",
+      "description": "Recording start time (in milliseconds since epoch)"
+    },
+    "end_time": {
+      "type": "integer",
+      "description": "Recording end time (in milliseconds since epoch)"
+    },
+    "duration": {
+      "type": "integer",
+      "description": "Recording duration in seconds"
+    },
+    "recording_type": {
+      "type": "string",
+      "enum": ["cloud", "individual", "web", "composite"],
+      "description": "Type of recording (cloud, individual, web, or composite)"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["pending", "in_progress", "completed", "failed", "expired"],
+      "description": "Current status of the recording"
+    },
+    "file_format": {
+      "type": "string",
+      "description": "File format of the recording (e.g., MP4, WebM)"
+    },
+    "file_size": {
+      "type": "integer",
+      "description": "Size of the recording file in bytes"
+    },
+    "resolution": {
+      "type": "string",
+      "description": "Resolution of the recording (e.g., 1280x720)"
+    },
+    "storage_path": {
+      "type": "string",
+      "description": "Storage path of the recording file"
+    },
+    "resource_id": {
+      "type": "string",
+      "description": "Resource ID assigned by Agora for this recording"
+    },
+    "region": {
+      "type": "string",
+      "description": "Region where the recording was processed"
+    },
+    "error_code": {
+      "type": ["integer", "null"],
+      "description": "Error code if the recording failed"
+    },
+    "error_message": {
+      "type": ["string", "null"],
+      "description": "Error message if the recording failed"
+    },
+    "parameters": {
+      "type": "object",
+      "description": "Additional parameters used for the recording"
+    },
+    "mode": {
+      "type": "string",
+      "description": "Recording mode (e.g., single, mix)"
+    },
+    "recorded_users": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of user IDs included in the recording"
+    },
+    "storage_config": {
+      "type": "object",
+      "description": "Storage configuration for the recording"
+    }
+  },
+  "required": [
+    "recording_id", 
+    "timestamp", 
+    "app_id", 
+    "channel_id", 
+    "start_time", 
+    "recording_type", 
+    "status"
+  ]
+}

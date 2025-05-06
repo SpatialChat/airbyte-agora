@@ -1,0 +1,112 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "channel_id": {
+      "type": "string",
+      "description": "Unique identifier for the channel"
+    },
+    "timestamp": {
+      "type": "integer", 
+      "description": "Timestamp of when the record was created (in milliseconds since epoch)"
+    },
+    "app_id": {
+      "type": "string",
+      "description": "Agora App ID associated with this channel"
+    },
+    "channel_name": {
+      "type": "string",
+      "description": "Name of the channel"
+    },
+    "create_time": {
+      "type": "integer",
+      "description": "Channel creation time (in milliseconds since epoch)"
+    },
+    "end_time": {
+      "type": ["integer", "null"],
+      "description": "Channel end time (in milliseconds since epoch), null if still active"
+    },
+    "duration": {
+      "type": "integer",
+      "description": "Channel duration in seconds"
+    },
+    "active_status": {
+      "type": "boolean",
+      "description": "Whether the channel is currently active"
+    },
+    "peak_users": {
+      "type": "integer",
+      "description": "Peak number of concurrent users in the channel"
+    },
+    "total_users": {
+      "type": "integer",
+      "description": "Total number of unique users who joined the channel"
+    },
+    "audio_minutes": {
+      "type": "number",
+      "description": "Total audio minutes consumed in the channel"
+    },
+    "video_minutes": {
+      "type": "number",
+      "description": "Total video minutes consumed in the channel"
+    },
+    "recording_minutes": {
+      "type": "number",
+      "description": "Total recording minutes in the channel"
+    },
+    "region": {
+      "type": "string",
+      "description": "Primary region where the channel was hosted"
+    },
+    "mode": {
+      "type": "string",
+      "description": "Channel mode (e.g., communication, live broadcasting)"
+    },
+    "encryption_enabled": {
+      "type": "boolean",
+      "description": "Whether encryption was enabled for the channel"
+    },
+    "has_recordings": {
+      "type": "boolean",
+      "description": "Whether the channel has recordings"
+    },
+    "quality_score": {
+      "type": "number",
+      "description": "Overall quality score for the channel (0-5)"
+    },
+    "user_join_count": {
+      "type": "integer",
+      "description": "Number of user join events"
+    },
+    "user_leave_count": {
+      "type": "integer",
+      "description": "Number of user leave events"
+    },
+    "error_count": {
+      "type": "integer",
+      "description": "Number of errors reported in the channel"
+    },
+    "channel_type": {
+      "type": "string",
+      "description": "Type of channel (e.g., voice, video, messaging)"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Tags associated with the channel"
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Additional metadata about the channel"
+    }
+  },
+  "required": [
+    "channel_id", 
+    "timestamp", 
+    "app_id", 
+    "channel_name", 
+    "create_time"
+  ]
+}
