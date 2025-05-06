@@ -3,9 +3,14 @@
  */
 const winston = require('winston');
 
-// Create a Winston logger
-const logger = winston.createLogger({
-  level: process.env.LOG_LEVEL || 'info',
+/**
+ * Creates a Winston logger with the specified log level
+ * @param {string} level - Log level (default: 'info')
+ * @returns {Object} Winston logger
+ */
+function createLogger(level = 'info') {
+  return winston.createLogger({
+    level: level,
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.json()
@@ -20,15 +25,21 @@ const logger = winston.createLogger({
   ]
 });
 
-// Log uncaught exceptions
+}
+
+// Create default logger
+const defaultLogger = createLogger();
+
+// Set up global error handlers
 process.on('uncaughtException', (error) => {
-  logger.error('Uncaught exception:', error);
+  defaultLogger.error('Uncaught exception:', error);
   process.exit(1);
 });
 
-// Log unhandled promise rejections
 process.on('unhandledRejection', (reason, promise) => {
-  logger.error('Unhandled promise rejection:', reason);
+  defaultLogger.error('Unhandled promise rejection:', reason);
 });
 
-module.exports = logger;
+// Export logger and factory function
+module.exports = defaultLogger;
+module.exports.createLogger = createLogger;

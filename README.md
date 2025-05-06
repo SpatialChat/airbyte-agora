@@ -29,6 +29,20 @@ This connector allows you to extract data from Agora's real-time communication p
 
 ## Configuration
 
+### Airbyte Web UI Configuration
+
+This connector can be configured through the Airbyte Web UI. When adding the connector in the Airbyte UI, you will need to provide the following information:
+
+1. **App ID**: Your Agora App ID
+2. **Customer ID**: Your Agora Customer ID
+3. **Customer Secret**: Your Agora Customer Secret
+4. **API Endpoint URL**: The Agora API endpoint URL (default: `https://api.agora.io`)
+5. **Region**: The Agora region to use (global, na, eu, ap, or cn) (default: `global`)
+6. **Start Date**: The date from which to start syncing data (format: `YYYY-MM-DD`)
+7. **Streams**: The streams to sync (leave empty to sync all streams)
+
+### Environment Variable Configuration (Legacy)
+
 ### Source Configuration
 
 | Field | Description | Required | Default |
